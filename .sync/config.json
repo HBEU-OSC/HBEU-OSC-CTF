@@ -1,0 +1,23 @@
+{
+  "upstream": {
+    "repo": "https://github.com/ProbiusOfficial/Hello-CTF.git",
+    "branch": "main"
+  },
+  "report_dir": ".sync/reports",
+  "fetch_retries": 3,
+  "include": [
+    "docs/**"
+  ],
+  "exclude": [
+    "docs/hc-writeup/**",
+    "docs/Event/**",
+    "docs/sidebar/**",
+    "docs/shell/**",
+    "docs/javascripts/**",
+    "docs/contents/index.html",
+    "docs/index.html",
+    "docs/index_content.json",
+    "docs/CNAME",
+    "docs/submit_event.html"
+  ]
+}

@@ -10,13 +10,28 @@ HBEU-OSC 是湖北工程学院的校园开源社团，倡导开放、协作、�
 - `docs/hc-writeup/`：比赛 WP 与投稿规范（见下方「比赛 WP 投稿」），含投稿模板与自动索引。
 - `overrides/`：MkDocs Material 主题模板和站点页面覆写。
 - `admin/`：用于编辑首页内容、文档和工具列表的本地管理面板。
+- `tools/`：维护脚本，目前包含 Hello-CTF 上游同步工具。
 - `mkdocs.yml`：站点构建配置。
 
 ## 与 Hello-CTF 的关系
 
 本仓库是在 [ProbiusOfficial/Hello-CTF](https://github.com/ProbiusOfficial/Hello-CTF) 基础上进行的二次创作。当前仓库保留并整理了上游项目中的部分 CTF 教程、站点样式和管理工具，后续将按 HBEU-OSC 网安方向的需要继续维护和扩展。
 
-本项目与 Hello-CTF 上游分别维护；本地 Git 仓库已移除指向上游的远程地址，不会自动同步上游。二次创作过程中保留原项目的许可证与来源信息，使用或分发相关内容时请同时遵守仓库内许可证及内容自身的授权说明。HBEU-OSC 与 Hello-CTF 上游项目之间的关系以各自公开信息为准。
+本项目与 Hello-CTF 上游分别维护；仓库不配置上游 remote，也不自动同步。需要吸收上游文档更新时，使用 `tools/sync_upstream.py` 手动执行（见下方「同步上游更新」）。二次创作过程中保留原项目的许可证与来源信息，使用或分发相关内容时请同时遵守仓库内许可证及内容自身的授权说明。HBEU-OSC 与 Hello-CTF 上游项目之间的关系以各自公开信息为准。
+
+## 同步上游更新
+
+仓库提供轻量的上游同步工具，用于把 Hello-CTF 的文档新增和修订合并进来：
+
+```bash
+# 只检查：生成报告到 .sync/reports/upstream-sync.md，不修改文件
+python tools/sync_upstream.py check
+
+# 应用「可安全同步」的改动：自动建 sync/upstream-* 分支、更新基线并提交
+python tools/sync_upstream.py apply
+```
+
+工具基于 `.sync/baseline.json` 做三方比较（基线 / 上游最新 / 本地工作区），只写入「上游改了、本地没改过」的文件；本仓库的定制内容（`docs/hc-writeup/`、首页、侧边栏与 shell 等）默认排除，冲突只报告不覆盖。新页面还需要手动补 `mkdocs.yml` 的 `nav`。详细用法与限制见 [tools/README.md](tools/README.md)。
 
 ## 本地预览
 
