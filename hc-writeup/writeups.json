@@ -1,0 +1,130 @@
+{
+  "writeups": [
+    {
+      "title": "ISCC 2026 - Crypto - 口令的 Base64 偏移加密",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "从多组明文-密文对照推断 Base64 编码后的逐位偏移，还原 admin 口令。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc001-password-offset/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - shadow 哈希识别与口令爆破",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "由 $6$ 前缀识别 SHA-512 crypt，按 yyyy-hh:mm:ss 格式生成字典爆破 root 口令。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc002-shadow-crack/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - 费马分解 RSA",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "针对相近素数 p、q 的 RSA，用费马分解恢复私钥并解出明文。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc003-fermat-rsa/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - SHA1 长度扩展攻击",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "利用 SHA1 长度扩展伪造 admin 身份 token，绕过服务端校验。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc008-sha1-length-extension/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - LCG 随机数预测",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "由连续 6 个线性同余输出恢复参数 A、B，并预测第 7 个随机数。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc022-lcg-predict/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - 横填竖取与 Base64",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "Base64 解码后按每行 6 列做横填竖取的逆变换，还原 32 字节情报短句。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc023-transposition-base64/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - 栅栏密码还原情报",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "枚举栅栏栏数（2–10）还原英文句子，提取其中的 flag 数字串。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc024-rail-fence/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - 摩斯电报",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "按短音、长音与斜杠分隔的规则解码摩斯码，得到电报明文。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc026-morse/"
+    },
+    {
+      "title": "ISCC 2026 - Crypto - 密码本查表",
+      "competition": "ISCC 2026",
+      "category": "Crypto",
+      "author": "杨心凌",
+      "date": "2026-11-20",
+      "summary": "按 P-HH-C 编码定位密码本单元格中的单词，逐码查表拼出报文。",
+      "url": "../hc-writeup/2026/ISCC2026/iscc027-codebook/"
+    },
+    {
+      "title": "ISCC 2026 - Web - 账号恢复大冒险",
+      "competition": "ISCC 2026",
+      "category": "Web",
+      "author": "杨心凌",
+      "date": "2026-10-26",
+      "summary": "结合 JWT 状态信任缺陷与 MariaDB 报错型 SQL 注入，分析账号恢复流程中的越权问题。",
+      "url": "../hc-writeup/2026/ISCC2026/account-recovery-adventure/"
+    },
+    {
+      "title": "ISCC 2026 - Pwn - combination",
+      "competition": "ISCC 2026",
+      "category": "Pwn",
+      "author": "杨心凌",
+      "date": "2026-10-26",
+      "summary": "分析 UAF 与空字节越界，利用堆布局破坏构造任意读写并劫持返回地址。",
+      "url": "../hc-writeup/2026/ISCC2026/combination/"
+    },
+    {
+      "title": "ISCC 2026 - Reverse - Conway's trap",
+      "competition": "ISCC 2026",
+      "category": "Reverse",
+      "author": "杨心凌",
+      "date": "2026-10-26",
+      "summary": "逆向分析多轮字节变换与运行时 secret，反推输入 seed 并还原动态校验结果。",
+      "url": "../hc-writeup/2026/ISCC2026/conways-trap/"
+    },
+    {
+      "title": "ISCC 2026 - Web - 值班邮件台",
+      "competition": "ISCC 2026",
+      "category": "Web",
+      "author": "杨心凌",
+      "date": "2026-10-26",
+      "summary": "从邮件线索、双人复核和内部诊断路由中梳理值班邮件台的访问控制问题。",
+      "url": "../hc-writeup/2026/ISCC2026/duty-mailbox/"
+    },
+    {
+      "title": "ISCC 2026 - Misc - 数字奥秘",
+      "competition": "ISCC 2026",
+      "category": "Misc",
+      "author": "杨心凌",
+      "date": "2026-10-26",
+      "summary": "从伪装成 PNG 的附件提取 Brainfuck 数据，结合中国剩余定理与 SHA-256/XOR 还原题目结果。",
+      "url": "../hc-writeup/2026/ISCC2026/number-mystery/"
+    }
+  ]
+}
